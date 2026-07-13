@@ -1,0 +1,39 @@
+{
+  "entities": {
+    "TestPaper": {
+      "title": "Test Paper",
+      "description": "Custom or default NTA NEET test paper structure with image-based or parsed questions",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "title": { "type": "string" },
+        "examType": { "type": "string" },
+        "durationMinutes": { "type": "number" },
+        "totalQuestions": { "type": "number" }
+      },
+      "required": ["id", "title"]
+    },
+    "TestAttempt": {
+      "title": "Test Attempt",
+      "description": "User test attempt result and answers history",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "paperId": { "type": "string" },
+        "score": { "type": "number" },
+        "timestamp": { "type": "string" }
+      },
+      "required": ["id", "paperId"]
+    }
+  },
+  "firestore": {
+    "/testPapers/{paperId}": {
+      "schema": { "$ref": "#/entities/TestPaper" },
+      "description": "Stored test papers including uploaded image/PDF papers"
+    },
+    "/testAttempts/{attemptId}": {
+      "schema": { "$ref": "#/entities/TestAttempt" },
+      "description": "Submitted test attempt scores and analytics"
+    }
+  }
+}

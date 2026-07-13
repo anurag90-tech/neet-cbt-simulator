@@ -1,0 +1,6 @@
+{
+  "name": "NEET 2027 CBT Exam Portal",
+  "description": "NTA-styled Computer Based Test (CBT) simulator with AI PDF question paper parser for NEET and JEE 2027 exams.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
